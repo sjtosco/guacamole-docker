@@ -13,8 +13,9 @@ You need a working **docker** installation and **docker compose** running on you
 Clone the GIT repository and start guacamole:
 
 ~~~bash
-git clone "https://github.com/boschkundendienst/guacamole-docker-compose.git"
+git clone "https://github.com/sjtosco/guacamole-docker.git"
 cd guacamole-docker-compose
+cp .env.template .env  # Edit values
 ./prepare.sh
 docker compose up -d
 ~~~
