@@ -17,7 +17,7 @@ server {
 
     # Limitar el número de conexiones y peticiones por IP
     limit_conn addr 10;  # Limita a 10 conexiones por IP
-    limit_req zone=one burst=5 nodelay;  # Limita a 1 solicitud por segundo, con un "burst" máximo de 5 solicitudes
+    limit_req zone=one burst=20 nodelay;  # Limita a 1 solicitud por segundo, con un "burst" máximo de 5 solicitudes
 
     location / {
         proxy_pass http://guacamole:8080/guacamole/;
