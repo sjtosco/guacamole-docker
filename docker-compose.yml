@@ -125,16 +125,17 @@ services:
       POSTGRES_HOSTNAME: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Referencia a la variable
       POSTGRES_USER: ${POSTGRES_USER}  # Referencia a la variable
+      TOTP_ENABLED: "true"
     image: guacamole/guacamole
     networks:
       - guacnetwork_compose
     volumes:
       - ./record:/record:rw
-    ports:
+        #ports:
       ## enable next line if not using nginx
       ##    - 8080:8080/tcp # Guacamole is on :8080/guacamole, not /.
       ## enable next line when using nginx
-      - 8080/tcp
+      #- 8080/tcp
     restart: always
 
   ########### optional ##############
